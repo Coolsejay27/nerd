@@ -1,0 +1,47 @@
+html, body {
+    overflow: hidden;
+}
+
+body{ 
+    padding: 0; 
+    margin: 0;  
+    background-color: black;
+}
+
+.Username{
+    color :white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Title{
+    position: relative;
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.SubTitle{
+    position: relative;
+    text-align: center;
+    top: 50%;
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.M64{
+    position: absolute;
+    right: 25%;
+    left: 25%;
+}
+
+.FB{
+    background: url("fullscreen-button.png") no-repeat center;
+    cursor:pointer;
+    position: absolute;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    top: 70%;
+    right: 73.14%;
+    left: 73.14%;
+}

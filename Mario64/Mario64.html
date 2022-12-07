@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="language" content="English">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="Mario64\style.css">
+</head>
+<body>
+    <div class="Title">
+        <h1>Mario 64 WebGl Recreation</h1>
+    </div>
+
+    <div class="SubTitle">
+        <h2><span class="Username"></span></h2>
+    </div>
+
+    <div class="FullscreenButton">
+        <button onclick="goFullscreen('M64'); return false"; class="FB"></button>
+    </div>
+
+    <div class="M64">
+        <canvas class="emscripten" id="canvas" style="width: 960px; height: 600px"></canvas>
+        <script type='text/javascript'>
+         var Module = {
+          preRun: [],
+          postRun: [],
+          print: (function() {
+            return function(text) {
+                if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+                    console.log(text);
+                };
+                })(),
+                printErr: function(text) {
+                    if (arguments.length > 1)
+                        text = Array.prototype.slice.call(arguments).join(' ');
+                        console.error(text);
+                    },
+                    canvas: (function() {
+                        var canvas = document.getElementById('canvas');
+                        canvas.width = window.innerWidth;
+                        canvas.height = window.innerHeight;
+                        canvas.addEventListener("webglcontextlost", function(e) {
+                        alert('WebGL context lost. You will need to reload the page.');
+                        e.preventDefault();
+                        }, false);
+                        return canvas;
+                        })(),
+                         setStatus: function(text) {}
+                        };
+                </script>
+                <script>
+                function goFullscreen(emscripten){
+                    var element = document.getElementById("canvas");
+                    if (element.mozRequestFullScreen) {
+                        element.mozRequestFullScreen();
+                    } else if (element.webkitRequestFullScreen) {
+                        element.webkitRequestFullScreen();
+                    }
+                }
+                </script>
+            <script async type="text/javascript" src="https://ubg100.github.io/games/sm64/sm64.us.f3dex2e.js"></script>
+        </div>
+    </body>
+</html>
